@@ -6,7 +6,7 @@
     var ON_LOCALHOST = 0; // !location.hostname.endsWith("copy.sh"); JvB commented out
 
     /** @const */
-    var HOST = ON_LOCALHOST ? "images/" : "//k.copy.sh/";
+    var HOST = /* ON_LOCALHOST */ 1 ? "images/" : "//k.copy.sh/"; // JvB fixed
 
     /**
      * @return {Object.<string, string>}

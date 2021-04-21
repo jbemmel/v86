@@ -3,7 +3,7 @@
 (function()
 {
     /** @const */
-    var ON_LOCALHOST = !location.hostname.endsWith("copy.sh");
+    var ON_LOCALHOST = 0; // !location.hostname.endsWith("copy.sh"); JvB commented out
 
     /** @const */
     var HOST = ON_LOCALHOST ? "images/" : "//k.copy.sh/";
@@ -1010,7 +1010,8 @@
 
             "boot_order": settings.boot_order || parseInt($("boot_order").value, 16) || 0,
 
-            "network_relay_url": ON_LOCALHOST ? "ws://localhost:8080/" : networking_proxy,
+            // JvB commented out
+            "network_relay_url": /* ON_LOCALHOST ? "ws://localhost:8080/" : */ networking_proxy,
 
             "bios": bios,
             "vga_bios": vga_bios,

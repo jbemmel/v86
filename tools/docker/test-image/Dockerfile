@@ -3,6 +3,9 @@ FROM ubuntu:latest
 RUN \
         dpkg --add-architecture i386 && \
         apt-get update -qq && \
+        ln -fs /usr/share/zoneinfo/US/Central /etc/localtime && \
+        apt-get install -y tzdata && \
+        dpkg-reconfigure -f noninteractive tzdata && \
         apt-get install -y nasm gdb unzip p7zip-full openjdk-8-jre wget python python3 qemu-system-x86 git-core build-essential libc6-dev-i386-cross libc6-dev-i386 && \
         wget https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz && \
         tar xfv node-v8.9.4-linux-x64.tar.xz && \

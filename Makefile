@@ -331,3 +331,7 @@ build/xterm.js:
 	curl https://cdn.jsdelivr.net/npm/xterm@4.9.0/lib/xterm.js > build/xterm.js
 	curl https://cdn.jsdelivr.net/npm/xterm@4.9.0/lib/xterm.js.map > build/xterm.js.map
 	curl https://cdn.jsdelivr.net/npm/xterm@4.9.0/css/xterm.css > build/xterm.css
+
+# JvB added
+wsproxy:
+	sudo docker run --privileged -d -p 8080:80 --name relay benjamincburns/jor1k-relay:latest
